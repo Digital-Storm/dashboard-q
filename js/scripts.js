@@ -55,22 +55,22 @@ function initializeJS() {
 
     jQuery('.toggle-nav').click(function () {
         if (jQuery('#sidebar > ul').is(":visible") === true) {
-            jQuery('#main-content').css({
+            jQuery('#main-content').animate({
                 'margin-left': '0px'
-            });
-            jQuery('#sidebar').css({
+            }, 500);
+            jQuery('#sidebar').animate({
                 'margin-left': '-180px'
-            });
+            }, 500);
             jQuery('#sidebar > ul').hide();
             jQuery("#container").addClass("sidebar-closed");
         } else {
-            jQuery('#main-content').css({
+            jQuery('#main-content').animate({
                 'margin-left': '180px'
-            });
+            }, 500);
             jQuery('#sidebar > ul').show();
-            jQuery('#sidebar').css({
+            jQuery('#sidebar').animate({
                 'margin-left': '0'
-            });
+            }, 500);
             jQuery("#container").removeClass("sidebar-closed");
         }
     });

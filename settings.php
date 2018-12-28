@@ -22,7 +22,7 @@
     ?>
     <div id="settings_page">
         <form action="savesettings.php" method="POST">
-        <h1>Settings</h1>
+        <h1>Dashboard-q Settings</h1>
         <table id="settings_table">
             <tr>
                 <td>Torrent client:</td>
@@ -65,7 +65,7 @@
                 <td><input type="password" name="torrent_password" value="<?php echo $cfg["torrent_password"];?>"></td>
             </tr>
             <tr>
-                <td>Torrent host ip or URL</td>
+                <td>Torrent host ip/hostname</td>
                 <td><input type="text" name="torrent_host" value="<?php echo $cfg["torrent_host"];?>"></td>
             </tr>
             <tr>
@@ -245,6 +245,6 @@
             "initial_setup" => true,
         ];
         write_ini_file($cfg, "config.ini");
-        header("Refresh:1");
+        echo "<script> window.location.href = \"settings.php\";</script>";
     }
     ?>

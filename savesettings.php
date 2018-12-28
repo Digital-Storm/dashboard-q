@@ -71,18 +71,4 @@ function write_ini_file($assoc_arr, $path, $has_sections=FALSE) {
 }
 
 write_ini_file($cfg, "config.ini");
-
-if($init)
-{
-    header("Location: index.php");
-}
-else {
-    echo "<!DOCTYPE html>";
-    echo "<head>";
-    echo "<title>Settings Saved</title>";
-    echo "<script type='text/javascript'>window.parent.location.reload()</script>";
-    echo "</head>";
-    echo "<body></body></html>";
-}
-
-// update readme and screenshots
+echo "<script> window.top.location.reload();</script>";
